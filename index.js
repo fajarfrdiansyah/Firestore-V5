@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 //match databaseName with your database name
-app.get('/tugasAkhir', (req, res) => {
+app.get('/skripsiAkhir', (req, res) => {
     const db = fire.firestore();
     let wholeData = []
     db.collection('cadenceSensor').orderBy('date', 'desc').get().then(snapshot => {
@@ -29,7 +29,7 @@ app.get('/tugasAkhir', (req, res) => {
     });
 });
 
-app.post('/tugasAkhir', (req, res) => {
+app.post('/skripsiAkhir', (req, res) => {
     const db = fire.firestore();
     db.collection('cadenceSensor').add({
         //change this collections according to your need
